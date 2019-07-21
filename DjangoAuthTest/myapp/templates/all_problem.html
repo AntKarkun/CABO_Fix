@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<div style="display: inline-block;">
+
+<div >
+    <h3>На рассмотрении</h3>
+
+    {% for problem_nr in problems_nr %}
+
+
+
+
+    <div class="card">
+
+  <div class="card-body">
+    <h5 class="card-title">{{problem_nr.namee}}</h5>
+    <p class="card-text">{{problem_nr.problema}}</p>
+  </div>
+</div>
+
+
+
+
+    {% endfor %}
+
+
+
+    </div>
+<div>
+    <h3>Решается</h3>
+    {% for problem_r in problems_r %}
+<div class="card">
+
+  <div class="card-body">
+    <h5 class="card-title">{{problem_r.namee}}</h5>
+    <p class="card-text">{{problem_r.problema}}</p>
+  </div>
+</div>
+    {% endfor %}
+
+</div>
+</div>
+
+{% endblock %}

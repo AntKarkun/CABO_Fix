@@ -1,0 +1,42 @@
+{% extends 'admin.html' %}
+{% block content %}
+<div style="display: inline-block;">
+<h1>Ещё не решено</h1>
+    <h2>Добро пожаловать {{user.username}}</h2>
+<div >
+
+
+    {% for problem_nr in problems_nr %}
+
+
+
+
+    <div class="card">
+
+  <div class="card-body">
+      <form method="post">
+    <h5 class="card-title">{{problem_nr.namee}}</h5>
+    <p class="card-text">{{problem_nr.problema}}</p>
+
+          {% csrf_token %}
+     <input class="btn btn-primary" type="submit" name="submit" value="Взять проблему">
+          <input type="hidden" name="hidden" value={{problem_nr.id}}>
+      </form>
+  </div>
+</div>
+
+</div>
+</div>
+
+
+
+
+    {% endfor %}
+
+
+
+    </div>
+
+</div>
+
+{% endblock %}
